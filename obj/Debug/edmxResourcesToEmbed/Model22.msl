@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище NasyrovaSemenova_ToursBaseModel1Container" CdmEntityContainer="NasyrovaSemenova_ToursBaseEntities1">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.Countries">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Код" ColumnName="Код" />
+          <ScalarProperty Name="Страна" ColumnName="Страна" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotel">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountOfStarts" ColumnName="CountOfStarts" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelComment">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.HotelComment">
+        <MappingFragment StoreEntitySet="HotelComment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelImage">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.HotelImage">
+        <MappingFragment StoreEntitySet="HotelImage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="ImageSourse" ColumnName="ImageSourse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tour">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.Tour">
+        <MappingFragment StoreEntitySet="Tour">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TicketCount" ColumnName="TicketCount" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImagePreview" ColumnName="ImagePreview" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsActual" ColumnName="IsActual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type">
+      <EntityTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="HotelOfTour" TypeName="NasyrovaSemenova_ToursBaseModel1.HotelOfTour" StoreEntitySet="HotelOfTour">
+      <EndProperty Name="Hotel">
+        <ScalarProperty Name="Id" ColumnName="HotelId" />
+      </EndProperty>
+      <EndProperty Name="Tour">
+        <ScalarProperty Name="Id" ColumnName="TourId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TypeOfTour" TypeName="NasyrovaSemenova_ToursBaseModel1.TypeOfTour" StoreEntitySet="TypeOfTour">
+      <EndProperty Name="Tour">
+        <ScalarProperty Name="Id" ColumnName="TourId" />
+      </EndProperty>
+      <EndProperty Name="Type">
+        <ScalarProperty Name="Id" ColumnName="TypeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище NasyrovaSemenova_ToursBaseModel1.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище NasyrovaSemenova_ToursBaseModel1.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище NasyrovaSemenova_ToursBaseModel1.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище NasyrovaSemenova_ToursBaseModel1.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище NasyrovaSemenova_ToursBaseModel1.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NasyrovaSemenova_ToursBaseModel1.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище NasyrovaSemenova_ToursBaseModel1.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище NasyrovaSemenova_ToursBaseModel1.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
